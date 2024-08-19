@@ -5,12 +5,13 @@ package org.example;
  */
 public class App {
     /**
-     *Задание №1  Меньшее из трех чисел с помощью if
+     *Задание №1  Написать функцию, которая будет сравнивать и выводить наименьшее значение
+     * из заданных целых чисел a , b , c.
      */
     private static Integer minNumbers(Integer a, Integer b, Integer c) {
         if (a < c && a < b) {
             return a;
-        } else if (b < a && b < c) {
+        } else if (b < c) {
             return b;
         } else {
             return c;
@@ -22,45 +23,45 @@ public class App {
      * но не кратен 100, а также если он кратен 400  )
      *
      */
-    private static void leapYear(Integer a) {
-        if ((a % 400 == 0) || (a % 4 == 0 && a % 100 != 0)) {
-            System.out.println( a + " год является високосным");
+    private static Boolean leapYear(Integer year) {
+        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+            return  true;
         } else {
-            System.out.println(a + " год не является  високосным");
+            return false;
         }
     }
     /**
-     * Задание №3 Вывести значение функции (4*(x - 5)^2 + 7*x – 10)/(x^4+1)
+     * Задание №3 Вывести значение выражения (4*(x - 5)^2 + 7*x – 10)/(x^4+1)
      * */
-    private static Double equation(Double a) {
-        Double e = (4 * Math.pow(a - 5, 2) + (7 * a) - 10) / ((Math.pow(a, 4) + 1));
-        return e;
+    private static Double equation(Double x) {
+        Double result = (4 * Math.pow(x - 5, 2) + (7 * x) - 10) / ((Math.pow(x, 4) + 1));
+        return result;
     }
     /**
      *
-     * Задание №4 По точке (x,y) определить четверть
+     * Задание №4 Определить в какой четверти находится точка, если известны её координаты.
      *
      */
-    private static void quarter(Double a, Double b) {
-        if (a > 0 && b > 0) {
-            System.out.println("Точка находится в четверти №1");
-        } else if (a < 0 && b > 0) {
-            System.out.println("Точка находится в четверти №2");
-        } else if (a > 0 && b < 0) {
-            System.out.println("Точка находится в четверти №3");
+    private static String quarter(Double x, Double y) {
+        if (x > 0 && y > 0) {
+            return "Точка находится в четверти №1\n";
+        } else if (x < 0 && y > 0) {
+            return "Точка находится в четверти №2\n";
+        } else if (x > 0 && y < 0) {
+            return "Точка находится в четверти №3\n";
         } else {
-            System.out.println("Точка находится в четверти №4");
+            return "Точка находится в четверти №4\n";
         }
     }
     /**
-     *  Задание №5 Существует ли треугольникпо трем сторонам(треугольник существует когасумма двух любы сторон больше третьей)
+     *  Задание №5 Существует ли треугольник по трем сторонам(треугольник существует когасумма двух любы сторон больше третьей)
      *
      */
-    private static void triangle(Double a, Double b, Double c) {
+    private static String triangle(Double a, Double b, Double c) {
         if (a + b > c && a + c > b && b + c > a) {
-            System.out.println("Треугольник существует");
+            return "Треугольник существует\n";
         } else {
-            System.out.println("Треугольник не существует");
+            return "Треугольник существует\n";
         }
     }
     /**
@@ -83,17 +84,21 @@ public class App {
     }
     public static void main(String[] args) {
         // Задание №1
-        Integer z = minNumbers(7, 5, 6);
+        Integer z = minNumbers(5, 7, 3);
         System.out.print("Наименьшее число: "  + z + "\n" );
         // Задание №2
-        leapYear(2100);
+        Integer year = 2400;
+        Boolean w = leapYear(year);
+        System.out.print("Является ли год" + " " + year + " вискосным " + w + "\n");
         // Задание №3
         Double f = equation(3.0);
         System.out.print(String.format("Значение функции %.3f\n", f));
         // Задание №4
-        quarter(3.2, 4.1);
+        String r =  quarter(3.2, 4.1);
+       System.out.print(r);
         // Задание №5
-        triangle(4.0, 5.0, 6.0);
+        String q =  triangle(4.0, 5.0, 6.0);
+        System.out.print(q);
         // Задание №6
         discriminant(16.0, -40.0, 25.0);
     }
