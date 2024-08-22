@@ -1,27 +1,25 @@
 package org.example;
+import java.util.Random;
+import com.sun.prism.shader.Solid_TextureYV12_AlphaTest_Loader;
 
 /**
  * Hello world!
  *
  */
 public class App {
-    /**Задание №1
+    /**
+     * Задание №1
      * Написать функцию которая принимает 3 значения
-     * (длина, минимально-возможное значение массива, максимально-возможное значение массива)
-     * и выводит рандомно сгенерированный массив
+     * (длина массива(length), минимально-возможное значение элемента(minValue), максимально-возможное значение элемента массива(maxValue))
+     * и генерирует массив заданной длины, заполняя его числами в промежутке между [maxValue, minValue]
      */
-    private static void funcArray(Integer length, Integer a, Integer b) {
-        Integer max;
-        Integer min;
-        if (a>b){ max = a; min = b;}
-        else { max = b; min = a;}
-        System.out.print(String.format("Рандомно сгенерированный массив: { "));
+    private static Integer [] funcArray(Integer length, Integer maxValue, Integer minValue) {
+        Random ran = new Random();
         Integer [] array = new Integer [length];
         for (Integer i = 0; i < array.length; i++){
-            array[i] = (int) (Math.random()*((max-min)+1)+min);
-            System.out.print(array [i] + " ");
+            array[i] =(ran.nextInt(10)*((maxValue-minValue)+1)/10)+minValue;
         }
-        System.out.print("}");
+        return array;
     }
     /**Задание №2
      * Найти сумму всех элементов массива
@@ -29,9 +27,7 @@ public class App {
      */
     private static Integer sumArray ( Integer [] array){
         Integer result = 0;
-        Integer k = null;
         for (Integer i = 0; i < array.length; i++){
-            if (array [i] == k){array [i] = i;} // если массив не является заданным с конкретными значениями, а есть только длина массива
             result += array[i];
         }
         return result;
@@ -39,56 +35,46 @@ public class App {
     /** Задание №3
      Вывести все четные элементы массива
      */
-    private static void evennumbersArray ( Integer [] array){
-        Integer k = null;
+    private static Integer [] evennumbersArray ( Integer [] array){
+        Integer [] evenNum = new Integer[array.length];
         for (Integer i = 0; i < array.length; i++){
-            if (array [i] == k){array [i] = i;}
-            if (array [i] % 2 == 0){
-                System.out.print (" " + array[i]);
+            if (array [i] % 2.00 == 0){
+                evenNum[i]=array[i];
             }
         }
+    return evenNum;
     }
     /**Задание №4
-     *Вывести строку задом наоборот
+     *Вывести массив наоборот
      *
      */
-    private static void reverseArray ( java.lang.String[] array){
-        System.out.print ("\nОбратный массив: ");
+    private static Integer[] reverseArray ( Integer[] array){
+        Integer [] reverse = new Integer[array.length];
         for (Integer i =array.length-1;i>=0;i--){
-            System.out.print(array[i] + " ");
+            reverse[i] = array[i];
         }
+        return reverse;
     }
     /**Задание №5
-     * “Удалить” первый элемент массива
-     *
-     */
-    private static void deletefirstI ( Integer[] array) {
-        System.out.print( "\nУдаление первого элемента: ");
-        for (Integer i = 0; i < array.length-1; i++) {
-            array [i] = array[i+1];
-            System.out.print( array[i] + " ");
-        }
-    }
-    /**Задание №6
      *
      * “Удалить” элемент из массива по индексу
      *
      */
-    private static void numbeElement ( Integer[] array,Integer number) {
-        System.out.print( "\nУдаление выбранного элемента: ");
+    private static Integer [] deleteElementbyIndex ( Integer[] array,Integer number) {
+        Integer [] deleteElementbyIndex = new Integer[array.length-1];
         for (Integer i = 0; i < number; i++) {
-            System.out.print(array[i] + " ");}
-        for(Integer j = number;j<array.length-1;j++){
-            array[number]=array[j+1];
-            System.out.print(array[number]+ " ");
+            deleteElementbyIndex[i] = array[i];
         }
-
+        for(Integer i = number;i < array.length-1; i++){
+            deleteElementbyIndex[i]=array[i+1];
+        }
+        return deleteElementbyIndex;
     }
-    /**Задание №7
+    /**Задание №6
      *Отсортировать массив с помощью пузырька (Bubble sort, сортировка пузырьком)
      *
      */
-    private static void bubbleSort (Integer [] array) {
+    private static Integer[] bubbleSort (Integer [] array) {
         Boolean sorted = false;
         while (!sorted) {
             sorted = true;
@@ -101,8 +87,9 @@ public class App {
                 }
             }
         }
+        return array;
     }
-    /**Задание №8
+    /**Задание №7
      * У нас есть последовательность 1+2+3+…+n определить существует ли такое n чтобы сумма ряда была кратно числу k, написать функцию в которую передают только число k, и получают true либо false
      *
      */
@@ -121,28 +108,45 @@ public class App {
     public static void main( String[] args )
     {
         // Функция для задания № 1
-        funcArray(3,2,-5);
+        Integer[] array = funcArray(5,2,-5);
+        System.out.print("Рандомно сгененрированный массив { ");
+        for(Integer i = 0;i<array.length;i++){
+            System.out.print( array[i] + " ");
+        }
+        System.out.print("}");
         // Функция для задания № 2
-        Integer a = sumArray(new Integer[]{5,5,5});
-        System.out.print(String.format("\nСумма всех элементов массива = %s", a));
+        Integer sumElement = sumArray(array);
+        System.out.print(String.format("\nСумма всех элементов массива = %s", sumElement));
         // Функция для задания № 3
-        evennumbersArray(new Integer[4]);
+        Integer [] evenElement = evennumbersArray(array);
+        System.out.print("\nЧетные элементы массива: ");
+       for(Integer i = 0;i<evenElement.length;i++){
+           System.out.print(evenElement[i] + " ");
+       }
         // Функция для задания № 4
-        reverseArray(new java.lang.String[]{"Зима","Лето","Осень","Весна"});
+        Integer [] reverseElement = reverseArray(array);
+       System.out.print("\nОбратный массив {");
+        for(Integer i=reverseElement.length-1;i>=0;i--){
+           System.out.print( reverseElement[i] + " ");
+       }
+        System.out.print("}");
+
         // Функция для задания № 5
-        Integer [] array = {8,7,6,5,4,3,2,1};
-        bubbleSort(array);
+        Integer[] deleteByIndex = deleteElementbyIndex(array,2);
+        System.out.print("\nУдаление массива по индексу элемента в массиве { ");
+        for (Integer i = 0; i<deleteByIndex.length;i++){
+            System.out.printf( deleteByIndex[i] + " ");
+        }
+        System.out.print("}");
+        // Функция для задания № 6
+        Integer [] sortirovka = bubbleSort(array);
         System.out.print(String.format("\nПузырьковый метод: { "));
         for (Integer i = 0;i<array.length;i++){
-            System.out.print(array[i] + " ");
+            System.out.print(sortirovka[i] + " ");
         }
         System.out.print( "}");
-        // Функция для задания № 6
-        deletefirstI(new Integer []{2,3,6,2,2,3,4,5,6});
         // Функция для задания № 7
-        numbeElement(new Integer[]{0,1,2,3,4,5,6,7,8,9},1);
-        // Функция для задания № 8
         Boolean z = numberK(2);
-        System.out.print("\nЗначение есть ли число кратное сумме ряда чисел = " + z);
+        System.out.printf("\nЗначение есть ли число кратное сумме ряда чисел = " + z);
     }
 }
