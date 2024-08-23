@@ -111,9 +111,10 @@ public class App {
         System.out.print(q);
         // Задание №6
         Double [] discriminant = discriminant(16.0, -40.0, -25.0);
-        System.out.print("Корень квадратного уравнения равен: ");
+        System.out.print("Корени квадратного уравнения равны: ");
         for (Integer i = 0; i < discriminant.length;i++){
             System.out.printf("%.2f", discriminant[i]);
+            System.out.print(" ");
         }
     }
 }
