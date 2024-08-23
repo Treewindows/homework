@@ -17,7 +17,7 @@ public class App {
         Random ran = new Random();
         Integer [] array = new Integer [length];
         for (Integer i = 0; i < array.length; i++){
-            array[i] =(ran.nextInt(10)*((maxValue-minValue)+1)/10)+minValue;
+            array[i] =((ran.nextInt(1000)*((maxValue-minValue)+1))/1000)+minValue;
         }
         return array;
     }
@@ -108,7 +108,7 @@ public class App {
     public static void main( String[] args )
     {
         // Функция для задания № 1
-        Integer[] array = funcArray(5,2,-5);
+        Integer[] array = funcArray(5,1,-10);
         System.out.print("Рандомно сгененрированный массив { ");
         for(Integer i = 0;i<array.length;i++){
             System.out.print( array[i] + " ");
