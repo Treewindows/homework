@@ -76,9 +76,6 @@ public class App {
             Double x2 = (-(b) - (Math.sqrt(D))) / (2 * a);
             array [0] = x1;
             array [1] = x2;
-
-            //System.out.print(String.format("Первый корень уравнения %s\n",x1));
-            //System.out.print(String.format("Второй корень уравнения %s\n",x2));
         } else if (D < 0) {
             System.out.println("Нет действительных корней");
             array [0] = null;
@@ -87,8 +84,6 @@ public class App {
             Double x = (-(b)) / (2 * a);
             array [0] =x;
             array [1] = null;
-            //System.out.print(String.format("Корень уравнения %s\n",x));
-
         }
         return array;
     }
@@ -111,7 +106,7 @@ public class App {
         System.out.print(q);
         // Задание №6
         Double [] discriminant = discriminant(16.0, -40.0, -25.0);
-        System.out.print("Корени квадратного уравнения равны: ");
+        System.out.print("Корни квадратного уравнения равны: ");
         for (Integer i = 0; i < discriminant.length;i++){
             System.out.printf("%.2f", discriminant[i]);
             System.out.print(" ");
