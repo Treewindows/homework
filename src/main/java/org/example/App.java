@@ -17,7 +17,7 @@ public class App {
      * @param length   длина массива.
      * @param maxValue максимальное значение массива.
      * @param minValue минимальное значение массива.
-     * @return
+     * @return возвращает рандомно сгенерированый массив
      */
     private static Integer[] funcArray(Integer length, Integer maxValue, Integer minValue) {
         Random ran = new Random();
@@ -31,6 +31,9 @@ public class App {
     /**
      * Задание №2
      * Найти сумму всех элементов массива
+     *
+     * @param array рандомно сгенерированый массив
+     * @return возвращает результат суммирования всех элементов массива
      */
     private static Integer sumArray(Integer[] array) {
         Integer result = 0;
@@ -43,6 +46,9 @@ public class App {
     /**
      * Задание №3
      * Вывести все четные элементы массива
+     *
+     * @param array рандомно сгенерированый массив
+     * @return возвращает массив заполненный четными элементыми
      */
     private static Integer[] evennumbersArray(Integer[] array) {
         Integer[] evenNum = new Integer[array.length];
@@ -57,6 +63,9 @@ public class App {
     /**
      * Задание №4
      * Вывести массив наоборот
+     *
+     * @param array рандомно сгенерированый массив
+     * @return возвращает обратный массив принимаемому функцией
      */
     private static Integer[] reverseArray(Integer[] array) {
         Integer[] reverse = new Integer[array.length];
@@ -68,15 +77,18 @@ public class App {
 
     /**
      * Задание №5
-     * <p>
      * “Удалить” элемент из массива по индексу
+     *
+     * @param array рандомно сгенерированый массив
+     * @param index индекс элемента массива который необходимо удалить
+     * @return возвращает массив без элеметна массива
      */
-    private static Integer[] deleteElementbyIndex(Integer[] array, Integer number) {
+    private static Integer[] deleteElementbyIndex(Integer[] array, Integer index) {
         Integer[] deleteElementbyIndex = new Integer[array.length - 1];
-        for (Integer i = 0; i < number; i++) {
+        for (Integer i = 0; i < index; i++) {
             deleteElementbyIndex[i] = array[i];
         }
-        for (Integer i = number; i < array.length - 1; i++) {
+        for (Integer i = index; i < array.length - 1; i++) {
             deleteElementbyIndex[i] = array[i + 1];
         }
         return deleteElementbyIndex;
@@ -85,6 +97,9 @@ public class App {
     /**
      * Задание №6
      * Отсортировать массив с помощью пузырька (Bubble sort, сортировка пузырьком)
+     *
+     * @param array рандомно сгенерированый массив
+     * @return отсортированный массив пузырьковым методом
      */
     private static Integer[] bubbleSort(Integer[] array) {
         Boolean sorted = false;
@@ -105,6 +120,9 @@ public class App {
     /**
      * Задание №7
      * У нас есть последовательность 1+2+3+…+n определить существует ли такое n чтобы сумма ряда была кратно числу k, написать функцию в которую передают только число k, и получают true либо false
+     *
+     * @param k указанное пользователем число
+     * @return возвращает результат является ли кратным числу k сумма ряда чисел
      */
     private static Boolean numberK(Integer k) {
         Boolean kratnoe = false;
