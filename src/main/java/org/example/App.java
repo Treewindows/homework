@@ -19,7 +19,7 @@ public class App {
      * @param minValue минимальное значение массива.
      * @return возвращает рандомно сгенерированый массив
      */
-    private static Integer[] funcArray(Integer length, Integer maxValue, Integer minValue) {
+    private static Integer[] generateArray(Integer length, Integer maxValue, Integer minValue) {
         Random ran = new Random();
         Integer[] array = new Integer[length];
         for (Integer i = 0; i < array.length; i++) {
@@ -50,7 +50,7 @@ public class App {
      * @param array рандомно сгенерированый массив
      * @return возвращает массив заполненный четными элементыми
      */
-    private static Integer[] evennumbersArray(Integer[] array) {
+    private static Integer[] evenNumbersArray(Integer[] array) {
         Integer[] evenNum = new Integer[array.length];
         for (Integer i = 0; i < array.length; i++) {
             if (array[i] % 2.00 == 0) {
@@ -69,8 +69,8 @@ public class App {
      */
     private static Integer[] reverseArray(Integer[] array) {
         Integer[] reverse = new Integer[array.length];
-        for (Integer i = array.length - 1; i >= 0; i--) {
-            reverse[i] = array[i];
+        for (Integer i = 0; i < array.length; i++) {
+            reverse[array.length - 1 - i] = array[i];
         }
         return reverse;
     }
@@ -125,55 +125,67 @@ public class App {
      * @return возвращает результат является ли кратным числу k сумма ряда чисел
      */
     private static Boolean numberK(Integer k) {
-        Boolean kratnoe = false;
+        Boolean multiple = false;
         Integer sum = 0;
         Integer[] array = new Integer[]{1, 2, 3, 4};
         for (Integer i = 0; i < array.length; i++) {
             sum += array[i];
             if (sum % k == 0) {
-                kratnoe = true;
+                multiple = true;
             }
         }
-        return kratnoe;
+        return multiple;
+    }
+
+    /**
+     * Функция для вывода массива в консоль.
+     *
+     * @param array массив пользователя, который необходимо вывести в консоль.
+     */
+    private static void printArray(Integer[] array) {
+        for (Integer i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 
     public static void main(String[] args) {
+
         // Функция для задания № 1
-        Integer[] array = funcArray(5, 1, -10);
+        Integer[] array = generateArray(5, 1, -10);
         System.out.print("Рандомно сгененрированный массив { ");
-        for (Integer i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        {
+            printArray(array);
         }
         System.out.print("}");
         // Функция для задания № 2
         Integer sumElement = sumArray(array);
         System.out.print(String.format("\nСумма всех элементов массива = %s", sumElement));
         // Функция для задания № 3
-        Integer[] evenElement = evennumbersArray(array);
+        Integer[] evenElement = evenNumbersArray(array);
         System.out.print("\nЧетные элементы массива: ");
-        for (Integer i = 0; i < evenElement.length; i++) {
-            System.out.print(evenElement[i] + " ");
+        {
+            printArray(evenElement);
         }
         // Функция для задания № 4
         Integer[] reverseElement = reverseArray(array);
         System.out.print("\nОбратный массив {");
-        for (Integer i = reverseElement.length - 1; i >= 0; i--) {
-            System.out.print(reverseElement[i] + " ");
+        {
+            printArray(reverseElement);
         }
         System.out.print("}");
 
         // Функция для задания № 5
         Integer[] deleteByIndex = deleteElementbyIndex(array, 2);
         System.out.print("\nУдаление массива по индексу элемента в массиве { ");
-        for (Integer i = 0; i < deleteByIndex.length; i++) {
-            System.out.printf(deleteByIndex[i] + " ");
+        {
+            printArray(deleteByIndex);
         }
         System.out.print("}");
         // Функция для задания № 6
-        Integer[] sortirovka = bubbleSort(array);
+        Integer[] sortingArray = bubbleSort(array);
         System.out.print(String.format("\nПузырьковый метод: { "));
-        for (Integer i = 0; i < array.length; i++) {
-            System.out.print(sortirovka[i] + " ");
+        {
+            printArray(sortingArray);
         }
         System.out.print("}");
         // Функция для задания № 7
