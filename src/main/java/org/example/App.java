@@ -143,51 +143,37 @@ public class App {
      * @param array массив пользователя, который необходимо вывести в консоль.
      */
     private static void printArray(Integer[] array) {
+        System.out.print("{ ");
         for (Integer i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
+        System.out.print("}");
     }
 
     public static void main(String[] args) {
-
         // Функция для задания № 1
         Integer[] array = generateArray(5, 1, -10);
-        System.out.print("Рандомно сгененрированный массив { ");
-        {
-            printArray(array);
-        }
-        System.out.print("}");
+        System.out.print("Рандомно сгененрированный массив: ");
+        printArray(array);
         // Функция для задания № 2
         Integer sumElement = sumArray(array);
         System.out.print(String.format("\nСумма всех элементов массива = %s", sumElement));
         // Функция для задания № 3
         Integer[] evenElement = evenNumbersArray(array);
         System.out.print("\nЧетные элементы массива: ");
-        {
-            printArray(evenElement);
-        }
+        printArray(evenElement);
         // Функция для задания № 4
         Integer[] reverseElement = reverseArray(array);
-        System.out.print("\nОбратный массив {");
-        {
-            printArray(reverseElement);
-        }
-        System.out.print("}");
-
+        System.out.print("\nОбратный массив: ");
+        printArray(reverseElement);
         // Функция для задания № 5
         Integer[] deleteByIndex = deleteElementbyIndex(array, 2);
-        System.out.print("\nУдаление массива по индексу элемента в массиве { ");
-        {
-            printArray(deleteByIndex);
-        }
-        System.out.print("}");
+        System.out.print("\nУдаление массива по индексу элемента в массиве: ");
+        printArray(deleteByIndex);
         // Функция для задания № 6
         Integer[] sortingArray = bubbleSort(array);
-        System.out.print(String.format("\nПузырьковый метод: { "));
-        {
-            printArray(sortingArray);
-        }
-        System.out.print("}");
+        System.out.print(String.format("\nПузырьковый метод: "));
+        printArray(sortingArray);
         // Функция для задания № 7
         Boolean z = numberK(2);
         System.out.printf("\nЗначение есть ли число кратное сумме ряда чисел = " + z);
