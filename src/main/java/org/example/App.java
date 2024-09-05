@@ -1,11 +1,14 @@
 package org.example;
 
-import javax.swing.undo.AbstractUndoableEdit;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Hello world!
  */
 public class App {
+    private static Logger logger = LogManager.getLogger(App.class);
+
     /**
      * Задание №1  Написать функцию, которая будет сравнивать и выводить наименьшее значение
      * из заданных целых чисел a , b , c.
@@ -61,13 +64,13 @@ public class App {
      */
     private static String quarter(Double x, Double y) {
         if (x > 0 && y > 0) {
-            return "Точка находится в четверти №1\n";
+            return "Точка находится в четверти №1";
         } else if (x < 0 && y > 0) {
-            return "Точка находится в четверти №2\n";
+            return "Точка находится в четверти №2";
         } else if (x > 0 && y < 0) {
-            return "Точка находится в четверти №3\n";
+            return "Точка находится в четверти №3";
         } else {
-            return "Точка находится в четверти №4\n";
+            return "Точка находится в четверти №4";
         }
     }
 
@@ -81,9 +84,9 @@ public class App {
      */
     private static String triangle(Double a, Double b, Double c) {
         if (a + b > c && a + c > b && b + c > a) {
-            return "Треугольник существует\n";
+            return "Треугольник существует";
         } else {
-            return "Треугольник существует\n";
+            return "Треугольник существует";
         }
     }
 
@@ -97,35 +100,36 @@ public class App {
             Double x2 = (-(b) - (Math.sqrt(D))) / (2 * a);
             String resultx1 = String.format("%.2f", x1);
             String resultx2 = String.format("%.2f", x2);
-            return String.format("Первый корень уравнения: %s\nВторой корень уравнения: %s\n", resultx1, resultx2);
+            return String.format("Первый корень уравнения: %s Второй корень уравнения: %s", resultx1, resultx2);
         } else if (D < 0) {
-            return String.format("Нет корней\n");
+            return String.format("Нет корней");
 
         } else {
             Double x = (-(b)) / (2 * a);
             String resultx = String.format("%.2f", x);
-            return String.format("Корень уравнения равен: %s\n", resultx);
+            return String.format("Корень уравнения равен: %s", resultx);
         }
     }
 
     public static void main(String[] args) {
         // Задание №1
         Integer minNumbers = minNumbers(5, 7, 3);
-        System.out.print("Наименьшее число " + minNumbers + "\n");
+        logger.info("Наименьшее число {}", minNumbers);
         // Задание №2
-        Boolean year = leapYear(2400);
-        System.out.print("Является ли год" + " " + year + "вискосным" + year + "\n");
+        Integer year = 2400;
+        Boolean leap = leapYear(year);
+        logger.info("Является ли год " + year + " вискосным " + leap);
         // Задание №3
         Double equation = equation(3.0);
-        System.out.print(String.format("Значение функции %.3f\n", equation));
+        logger.info(String.format("Значение функции %.3f", equation));
         // Задание №4
         String quarter = quarter(3.2, 4.1);
-        System.out.print(quarter);
+        logger.info(quarter);
         // Задание №5
         String triangle = triangle(4.0, 5.0, 6.0);
-        System.out.print(triangle);
+        logger.info(triangle);
         // Задание №6
         String discriminant = discriminant(16.0, -40.0, -25.0);
-        System.out.print(discriminant);
+        logger.info(discriminant);
     }
 }
