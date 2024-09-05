@@ -3,11 +3,14 @@ package org.example;
 import java.util.Random;
 
 import com.sun.prism.shader.Solid_TextureYV12_AlphaTest_Loader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Hello world!
  */
 public class App {
+    private static Logger logger = LoggerFactory.getLogger(App.class);
     /**
      * Задание №1
      * Написать функцию которая принимает 3 значения
@@ -143,40 +146,41 @@ public class App {
      * @param array массив пользователя, который необходимо вывести в консоль.
      */
     private static void printArray(Integer[] array) {
-        System.out.print("{ ");
+        logger.info("{ ");
         for (Integer i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+            logger.info(array[i] + " ");
         }
-        System.out.print("}");
+        logger.info("}");
     }
 
     public static void main(String[] args) {
 
         // Функция для задания № 1
         Integer[] array = generateArray(5, 1, -10);
-        System.out.print("Рандомно сгененрированный массив: ");
+        logger.info("Рандочно сгенерированный массив");
         printArray(array);
         // Функция для задания № 2
         Integer sumElement = sumArray(array);
-        System.out.print(String.format("\nСумма всех элементов массива = %s", sumElement));
+        logger.info("Сумма всех элементов массива = {}", sumElement);
+        //System.out.print(String.format("\nСумма всех элементов массива = %s", sumElement));
         // Функция для задания № 3
         Integer[] evenElement = evenNumbersArray(array);
-        System.out.print("\nЧетные элементы массива: ");
+        logger.info("\nЧетные элементы массива: ");
         printArray(evenElement);
         // Функция для задания № 4
         Integer[] reverseElement = reverseArray(array);
-        System.out.print("\nОбратный массив: ");
+        logger.info("\nОбратный массив: ");
         printArray(reverseElement);
         // Функция для задания № 5
         Integer[] deleteByIndex = deleteElementbyIndex(array, 2);
-        System.out.print("\nУдаление массива по индексу элемента в массиве: ");
+        logger.info("\nУдаление массива по индексу элемента в массиве: ");
         printArray(deleteByIndex);
         // Функция для задания № 6
         Integer[] sortingArray = bubbleSort(array);
-        System.out.print("\nПузырьковый метод: ");
+        logger.info("\nПузырьковый метод: ");
         printArray(sortingArray);
         // Функция для задания № 7
         Boolean z = numberK(2);
-        System.out.printf("\nЗначение есть ли число кратное сумме ряда чисел = " + z);
+        logger.info("\nЗначение есть ли число кратное сумме ряда чисел = " + z);
     }
 }
