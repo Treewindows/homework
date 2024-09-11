@@ -1,4 +1,4 @@
-package Address.russia;
+package Address.Russia;
 
 public class Vladivostok extends PrimorskyKrai{
 

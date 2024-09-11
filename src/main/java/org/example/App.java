@@ -8,9 +8,9 @@ import Shape.Rectangle;
 import Shape.rightAngledTriangle;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
-import Address.russia.steetV;
-import Address.russia.StreetSp;
-import Address.russia.StreetVladivostok;
+import Address.Russia.steetV;
+import Address.Russia.StreetSp;
+import Address.Russia.StreetVladivostok;
 import Address.USA.StreetM;
 /**
  * Hello world!
