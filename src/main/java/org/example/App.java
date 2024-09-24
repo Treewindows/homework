@@ -112,6 +112,9 @@ public class App {
     }
 
     public static void main(String[] args) {
+        /**
+         * Заменить все System.out на логгер в предыдущих заданиях
+         */
         // Задание №1
         Integer minNumbers = minNumbers(5, 7, 3);
         logger.info("Наименьшее число {}", minNumbers);
