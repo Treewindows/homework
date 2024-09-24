@@ -154,6 +154,9 @@ public class App {
     }
 
     public static void main(String[] args) {
+        /**
+         * Заменить все System.out на логгер в предыдущих заданиях
+         */
 
         // Функция для задания № 1
         Integer[] array = generateArray(5, 1, -10);
