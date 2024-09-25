@@ -2,7 +2,6 @@ package org.example;
 
 import java.util.Random;
 
-import com.sun.prism.shader.Solid_TextureYV12_AlphaTest_Loader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +10,7 @@ import org.slf4j.LoggerFactory;
  */
 public class App {
     private static Logger logger = LoggerFactory.getLogger(App.class);
+
     /**
      * Задание №1
      * Написать функцию которая принимает 3 значения
@@ -155,7 +155,8 @@ public class App {
 
     public static void main(String[] args) {
         /**
-         * Заменить все System.out на логгер в предыдущих заданиях
+         * Задание Пятого урока №1 Заменить все System.out на логгер в предыдущих заданиях
+         * Задание Пятого урока №3 Сделать вывод лога в файл
          */
 
         // Функция для задания № 1
