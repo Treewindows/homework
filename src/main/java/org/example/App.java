@@ -113,7 +113,8 @@ public class App {
 
     public static void main(String[] args) {
         /**
-         * Заменить все System.out на логгер в предыдущих заданиях
+         * Задание Пятого урока №1 Заменить все System.out на логгер в предыдущих заданиях
+         * Задание Пятого урока №3 Сделать вывод лога в файл
          */
         // Задание №1
         Integer minNumbers = minNumbers(5, 7, 3);
