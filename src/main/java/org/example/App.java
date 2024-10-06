@@ -1,6 +1,5 @@
 package org.example;
 
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.Person.Person;
@@ -23,5 +22,4 @@ public class App {
         logger.info("Результат вычитания: {}", calculator.subtraction(2.2, 2.3));
         logger.info("Результат возведения числа в квадрат: {}", calculator.squaring(2.2));
     }
-
 }
