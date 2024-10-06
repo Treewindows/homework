@@ -63,14 +63,17 @@ public class App {
      * @return возвращает четверть в которой находится точка
      */
     private static String quarter(Double x, Double y) {
-        if (x > 0 && y > 0) {
+        if (x >= 0 && y >= 0) {
             return "Точка находится в четверти №1";
-        } else if (x < 0 && y > 0) {
+        } else if (x <= 0 && y >= 0) {
             return "Точка находится в четверти №2";
-        } else if (x > 0 && y < 0) {
+        } else if (x >= 0 && y <= 0) {
             return "Точка находится в четверти №3";
-        } else {
+        } else if(x <= 0 && y <= 0) {
             return "Точка находится в четверти №4";
+        }
+        else {
+            return "Точка находится на координатах х = 0 у = 0";
         }
     }
 
@@ -127,7 +130,7 @@ public class App {
         Double equation = equation(3.0);
         logger.info(String.format("Значение функции %.3f", equation));
         // Задание №4
-        String quarter = quarter(3.2, 4.1);
+        String quarter = quarter(0.0, 0.002);
         logger.info(quarter);
         // Задание №5
         String triangle = triangle(4.0, 5.0, 6.0);
