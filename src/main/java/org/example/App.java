@@ -86,7 +86,7 @@ public class App {
         if (a + b > c && a + c > b && b + c > a) {
             return "Треугольник существует";
         } else {
-            return "Треугольник существует";
+            return "Треугольник не существует";
         }
     }
 
