@@ -22,7 +22,6 @@ public class calculator {
      * @return возвращает разность двух чисел
      */
     public static Double subtraction(Double a, Double b) {
-
         return a - b;
     }
     /**
@@ -33,7 +32,6 @@ public class calculator {
      * @return возвращает произведение двух чисел
      */
     public static Double multiplication(Double a, Double b) {
-
         return a * b;
     }
     /**
