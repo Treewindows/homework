@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import org.slf4j.Logger;
@@ -146,11 +147,11 @@ public class App {
      * @param array массив пользователя, который необходимо вывести в консоль.
      */
     private static void printArray(Integer[] array) {
-        logger.info("{ ");
+        String save = null;
         for (Integer i = 0; i < array.length; i++) {
-            logger.info(array[i] + " ");
+            save = Arrays.toString(array);
         }
-        logger.info("}");
+        logger.info(save);
     }
 
     public static void main(String[] args) {
@@ -166,25 +167,24 @@ public class App {
         // Функция для задания № 2
         Integer sumElement = sumArray(array);
         logger.info("Сумма всех элементов массива = {}", sumElement);
-        //System.out.print(String.format("\nСумма всех элементов массива = %s", sumElement));
         // Функция для задания № 3
         Integer[] evenElement = evenNumbersArray(array);
-        logger.info("\nЧетные элементы массива: ");
+        logger.info("Четные элементы массива: ");
         printArray(evenElement);
         // Функция для задания № 4
         Integer[] reverseElement = reverseArray(array);
-        logger.info("\nОбратный массив: ");
+        logger.info("Обратный массив: ");
         printArray(reverseElement);
         // Функция для задания № 5
         Integer[] deleteByIndex = deleteElementbyIndex(array, 2);
-        logger.info("\nУдаление массива по индексу элемента в массиве: ");
+        logger.info("Удаление массива по индексу элемента в массиве: ");
         printArray(deleteByIndex);
         // Функция для задания № 6
         Integer[] sortingArray = bubbleSort(array);
-        logger.info("\nПузырьковый метод: ");
+        logger.info("Пузырьковый метод: ");
         printArray(sortingArray);
         // Функция для задания № 7
         Boolean z = numberK(2);
-        logger.info("\nЗначение есть ли число кратное сумме ряда чисел = " + z);
+        logger.info("Значение есть ли число кратное сумме ряда чисел = " + z);
     }
 }
