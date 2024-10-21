@@ -14,6 +14,7 @@ public class calculator {
     public static Double addition(Double a, Double b) {
         return a + b;
     }
+
     /**
      * Функция вычитания двух чисел a,b
      *
@@ -24,6 +25,7 @@ public class calculator {
     public static Double subtraction(Double a, Double b) {
         return a - b;
     }
+
     /**
      * Функция умножения двух чисел a,b
      *
@@ -34,6 +36,7 @@ public class calculator {
     public static Double multiplication(Double a, Double b) {
         return a * b;
     }
+
     /**
      * Функция деления двух чисел a,b
      *
@@ -44,6 +47,7 @@ public class calculator {
     public static Double division(Double a, Double b) {
         return a / b;
     }
+
     /**
      * Функция возведения числа во 2 степень
      *
