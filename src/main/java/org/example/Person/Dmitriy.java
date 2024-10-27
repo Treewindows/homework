@@ -7,7 +7,6 @@ public class Dmitriy extends Cook {
     private String lastName = "Исаев";
 
     private String fatherName = "Анатольевич";
-
     private Integer age = 47;
 
     public Dmitriy() {
@@ -16,7 +15,6 @@ public class Dmitriy extends Cook {
         this.fatherName = fatherName;
         this.age = age;
     }
-
 
     @Override
     public String toString() {

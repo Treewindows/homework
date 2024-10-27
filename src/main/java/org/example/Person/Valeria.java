@@ -18,7 +18,6 @@ public class Valeria extends Engineer {
         this.age = age;
     }
 
-
     @Override
     public String toString() {
         return String.format("ФИО: %s %s %s.\nВозраст: %d.\nПрофессия: %s.\n%s\n", firstName, lastName, fatherName, age, getProfession(), getHigherEducation());

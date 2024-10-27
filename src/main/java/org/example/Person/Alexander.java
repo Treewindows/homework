@@ -5,11 +5,8 @@ import org.example.Work.Loader;
 public class Alexander extends Loader {
     private String firstName = "Александр";
     private String lastName = "Осипов";
-
     private String fatherName = "Иванович";
-
     private Integer age = 41;
-    public static Integer k;
 
     public Alexander() {
         this.firstName = firstName;
@@ -17,7 +14,6 @@ public class Alexander extends Loader {
         this.fatherName = fatherName;
         this.age = age;
     }
-
 
     @Override
     public String toString() {

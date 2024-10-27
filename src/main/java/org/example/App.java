@@ -21,7 +21,5 @@ public class App {
         logger.info(valeria);
         logger.info(dmitriy);
         logger.info(alexander);
-
-
     }
 }

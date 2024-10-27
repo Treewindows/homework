@@ -5,9 +5,7 @@ import org.example.Work.Doctor;
 public class Boris extends Doctor {
     private String firstName = "Борис";
     private String lastName = "Денисов";
-
     private String fatherName = "Денисов";
-
     private Integer age = 36;
 
     public Boris() {
@@ -16,7 +14,6 @@ public class Boris extends Doctor {
         this.fatherName = fatherName;
         this.age = age;
     }
-
 
     @Override
     public String toString() {
