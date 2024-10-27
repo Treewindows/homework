@@ -1,24 +1,15 @@
-package Address.USA;
+package Address.Russia;
 
-public class Miami extends StateFlorida {
+public class PrimorskyKrai extends Russia {
 
-    private String Town = "Miami";
-    /**
-     * Функция возвращает название города
-     *
-     * @return возвращает название города
-     */
-    public String getTown() {
-        return String.format("\nГород: %s", Town);
-    }
+    private String Region = "Приморский край";
     /**
      * Функция возвращает название региона
      *
-     * @return название региона из родительского класса
+     * @return название региона
      */
-    @Override
     public String getRegion() {
-        return super.getRegion();
+        return String.format("\nРегион: %s", Region);
     }
     /**
      * Функция возвращает название страны
@@ -36,6 +27,6 @@ public class Miami extends StateFlorida {
      */
     @Override
     public String address() {
-        return String.format("%s%s%s", getCountry(), getRegion(), getTown());
+        return String.format("%s%s", getCountry(), getRegion());
     }
 }

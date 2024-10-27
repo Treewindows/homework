@@ -9,7 +9,11 @@ public class Rectangle extends Shape {
         this.width = width;
         this.length = length;
     }
-
+    /**
+     * Функция вычисляет площадь прямогульника
+     *
+     * @return площадь прямогульника
+     */
     @Override
     public String area() {
         Double resultArea = width * length;

@@ -9,7 +9,11 @@ public class Parallelogram extends Shape {
         this.side = side;
         this.height = height;
     }
-
+    /**
+     * Функция вычисляет площадь параллелограмма
+     *
+     * @return площадь параллелограмма
+     */
     @Override
     public String area() {
         Double resultArea = side * height;

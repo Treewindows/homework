@@ -1,8 +1,8 @@
-package Address.USA;
+package Address.Russia;
 
-public class Miami extends StateFlorida {
+public class Vladivostok extends PrimorskyKrai {
 
-    private String Town = "Miami";
+    private String Town = "Владивосток";
     /**
      * Функция возвращает название города
      *

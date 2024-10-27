@@ -1,8 +1,8 @@
-package Address.USA;
+package Address.Russia;
 
-public class Miami extends StateFlorida {
+public class Voronezh extends Voronezhregion {
 
-    private String Town = "Miami";
+    private String Town = "Воронеж";
     /**
      * Функция возвращает название города
      *
@@ -39,3 +39,4 @@ public class Miami extends StateFlorida {
         return String.format("%s%s%s", getCountry(), getRegion(), getTown());
     }
 }
+

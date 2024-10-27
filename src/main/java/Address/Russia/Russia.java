@@ -1,7 +1,9 @@
-package Address.USA;
+package Address.Russia;
 
-public class USA {
-    private String Country = "USA";
+public class Russia {
+
+
+    private String Country = "Российская Федерация";
     /**
      * Функция возвращает название страны
      *

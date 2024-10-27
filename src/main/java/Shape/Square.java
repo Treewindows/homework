@@ -7,7 +7,11 @@ public class Square extends Shape {
     public Square(Double side) {
         this.side = side;
     }
-
+    /**
+     * Функция вычисляет площадь квадрата
+     *
+     * @return площадь квадрата
+     */
     @Override
     public String area() {
         Double resultArea = side * side;

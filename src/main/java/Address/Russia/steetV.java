@@ -1,11 +1,11 @@
-package Address.USA;
+package Address.Russia;
 
-public class StreetM extends Miami {
+public class steetV extends Voronezh{
 
-    private String Street = "1st Northwest Road";
+    private String Street = "ул.Театральная д.32";
 
     public String getStreet() {
-        return String.format("\nУлица: %s", Street);
+        return String.format("\nУлица: %s",Street);
     }
     /**
      * Функция возвращает название страны
@@ -41,6 +41,6 @@ public class StreetM extends Miami {
      */
     @Override
     public String address() {
-        return String.format("%s%s%s%s", getCountry(), getRegion(), getTown(), getStreet());
+        return String.format("%s%s%s%s",getCountry(),getRegion(),getTown(),getStreet());
     }
 }

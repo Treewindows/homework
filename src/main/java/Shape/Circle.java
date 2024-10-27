@@ -7,7 +7,11 @@ public class Circle extends Shape {
     public Circle(Double Radius) {
         this.Radius = Radius;
     }
-
+    /**
+     * Функция вычисляет площадь круга
+     *
+     * @return площадь круга
+     */
     @Override
     public String area() {
         Double resultArea = 3.14 * (Radius * Radius);

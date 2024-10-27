@@ -1,8 +1,8 @@
-package Address.USA;
+package Address.Russia;
 
-public class StreetM extends Miami {
+public class StreetSp extends SaintPeterburg {
 
-    private String Street = "1st Northwest Road";
+    private String Street = "ул.Егорова д.18";
 
     public String getStreet() {
         return String.format("\nУлица: %s", Street);

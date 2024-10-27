@@ -9,7 +9,11 @@ public class rightAngledTriangle extends Shape {
         this.catheterA = catheterA;
         this.catheterB = catheterB;
     }
-
+    /**
+     * Функция вычисляет площадь прямоугольного теугольника
+     *
+     * @return площадь прямоугольного теугольника
+     */
     @Override
     public String area() {
         Double resultArea = 0.5 * catheterA * catheterB;
