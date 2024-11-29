@@ -61,5 +61,6 @@ public class App {
         logger.info(person.equals(person6));
         logger.info(person.equals(person7));
         logger.info(person.hashCode()+ " " +person1.hashCode()+ " " + person2.hashCode()+ " "+ person3.hashCode()+ " "+person4.hashCode());
+
     }
 }
