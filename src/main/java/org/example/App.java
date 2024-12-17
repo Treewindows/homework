@@ -5,10 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.example.LessonVisitor.*;
 import org.example.decorator.ReadyMadeVegetables;
 import org.example.decorator.UnwashedVegetables;
-import org.example.visitor.visitorpattern.Animal;
-import org.example.visitor.visitorpattern.Baggage;
-import org.example.visitor.visitorpattern.EntityTicket;
-import org.example.visitor.visitorpattern.Person;
+
 
 import java.util.ArrayList;
 
